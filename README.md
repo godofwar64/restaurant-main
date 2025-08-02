@@ -1,70 +1,201 @@
-# Getting Started with Create React App
+# 🍽️ نظام إدارة المطاعم - Restaurant Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## نظرة عامة
 
-## Available Scripts
+نظام شامل لإدارة المطاعم يتكون من واجهة عملاء متطورة ولوحة تحكم إدارية متكاملة.
 
-In the project directory, you can run:
+## ✨ المميزات الرئيسية
 
-### `npm start`
+### للعملاء:
+- 🏠 **الصفحة الرئيسية**: عرض جذاب للمطعم والأطباق الشائعة
+- 🍴 **قوائم الطعام**: تصفح الأطباق حسب الفئات (إفطار، غداء، عشاء، حلويات)
+- 🛒 **نظام السلة**: إضافة وتعديل الطلبات بسهولة
+- 💳 **صفحة الدفع**: نظام دفع متكامل مع خيارات متعددة
+- 📦 **تتبع الطلبات**: متابعة حالة الطلب في الوقت الفعلي
+- 📅 **حجز الطاولات**: نظام حجز سهل ومرن
+- 🌐 **دعم ثنائي اللغة**: العربية والإنجليزية
+- 📱 **تصميم متجاوب**: يعمل على جميع الأجهزة
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### لوحة الإدارة:
+- 📊 **لوحة تحكم شاملة**: إحصائيات وتحليلات مفصلة
+- 🍽️ **إدارة القائمة**: إضافة وتعديل وحذف الأطباق
+- 📋 **إدارة الطلبات**: متابعة وتحديث حالة الطلبات
+- 🎯 **إدارة الحجوزات**: إدارة حجوزات الطاولات
+- 👥 **إدارة العملاء**: قاعدة بيانات العملاء
+- 📈 **التقارير والإحصائيات**: رسوم بيانية تفاعلية
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ التقنيات المستخدمة
 
-### `npm test`
+### Frontend (واجهة المستخدم):
+- **React 18** + **TypeScript**
+- **Vite** (أداة البناء)
+- **Tailwind CSS** (التصميم)
+- **shadcn/ui** (مكونات الواجهة)
+- **Lucide React** (الأيقونات)
+- **React Router** (التنقل)
+- **Chart.js** (الرسوم البيانية)
+- **React Hook Form** (إدارة النماذج)
+- **Axios** (HTTP requests)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend (الخادم):
+- **FastAPI** (Python)
+- **MongoDB** (قاعدة البيانات)
+- **Motor** (MongoDB async driver)
+- **JWT** (المصادقة)
+- **Pydantic** (التحقق من البيانات)
 
-### `npm run build`
+## 🚀 التشغيل السريع
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### متطلبات النظام:
+- Node.js 18+ & npm
+- Python 3.9+
+- MongoDB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### تشغيل المشروع:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 1. Frontend (React):
+```bash
+cd restaurant-menu
+npm install
+npm run dev
+```
+التطبيق سيعمل على: `http://localhost:5173`
 
-### `npm run eject`
+#### 2. Backend (FastAPI):
+```bash
+cd restaurant-api
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+API سيعمل على: `http://localhost:8000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### إعداد قاعدة البيانات:
+```bash
+# تشغيل MongoDB
+mongod --dbpath /path/to/your/db
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📁 هيكل المشروع
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+restaurant/
+├── restaurant-menu/          # Frontend (React)
+│   ├── src/
+│   │   ├── components/       # مكونات الواجهة
+│   │   ├── pages/           # صفحات التطبيق
+│   │   ├── services/        # خدمات API
+│   │   ├── hooks/           # React hooks
+│   │   ├── contexts/        # React contexts
+│   │   ├── translations/    # ملفات الترجمة
+│   │   └── config/          # إعدادات التطبيق
+│   └── public/              # الملفات العامة
+├── restaurant-api/          # Backend (FastAPI)
+│   ├── app/
+│   │   ├── models/          # نماذج البيانات
+│   │   ├── routes/          # مسارات API
+│   │   ├── services/        # خدمات الأعمال
+│   │   └── core/            # إعدادات أساسية
+│   └── requirements.txt     # متطلبات Python
+└── API_DOCUMENTATION.md     # وثائق API
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔧 الإعدادات
 
-## Learn More
+### متغيرات البيئة:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Frontend (.env):
+```env
+VITE_API_BASE_URL=http://localhost:8000/api
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Backend (.env):
+```env
+DATABASE_URL=mongodb://localhost:27017/restaurant
+SECRET_KEY=your-secret-key-here
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+```
 
-### Code Splitting
+## 📚 الوثائق
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **[وثائق API](../API_DOCUMENTATION.md)**: دليل شامل لجميع endpoints
+- **[نظام الطلبات](./CHECKOUT_README.md)**: شرح مفصل لنظام الطلبات والدفع
+- **Swagger UI**: `http://localhost:8000/docs` (مع تشغيل الخادم)
 
-### Analyzing the Bundle Size
+## 🎨 واجهات المستخدم
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### للعملاء:
+- `/` - الصفحة الرئيسية
+- `/breakfast` - قائمة الإفطار
+- `/lunch` - قائمة الغداء
+- `/dinner` - قائمة العشاء
+- `/dessert` - قائمة الحلويات
+- `/booking` - حجز الطاولات
+- `/checkout` - إتمام الطلب
+- `/orders` - تتبع الطلبات
 
-### Making a Progressive Web App
+### لوحة الإدارة:
+- `/admin` - تسجيل دخول الإدارة
+- `/admin/dashboard` - لوحة التحكم الرئيسية
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔐 المصادقة والأمان
 
-### Advanced Configuration
+- **JWT Tokens**: للمصادقة الآمنة
+- **Protected Routes**: حماية صفحات الإدارة
+- **Data Validation**: التحقق من البيانات
+- **CORS**: إعدادات الأمان للطلبات
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📱 الميزات التقنية
 
-### Deployment
+- ✅ **تصميم متجاوب** (Mobile-first)
+- ✅ **PWA Ready** (Progressive Web App)
+- ✅ **TypeScript** (Type Safety)
+- ✅ **Real-time Updates** (تحديثات فورية)
+- ✅ **Error Handling** (معالجة الأخطاء)
+- ✅ **Loading States** (حالات التحميل)
+- ✅ **Form Validation** (التحقق من النماذج)
+- ✅ **Local Storage** (التخزين المحلي)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌍 دعم اللغات
 
-### `npm run build` fails to minify
+التطبيق يدعم:
+- 🇸🇦 العربية (RTL)
+- 🇺🇸 الإنجليزية (LTR)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚀 النشر والتطوير
+
+### البناء للإنتاج:
+```bash
+# Frontend
+npm run build
+
+# Backend
+# FastAPI يعمل مع uvicorn في الإنتاج
+```
+
+### اختبار التطبيق:
+```bash
+# Frontend
+npm run test
+
+# Backend
+pytest
+```
+
+## 👨‍💻 المطور
+
+**Essam Abo Elmgd**  
+Full Stack Developer
+
+📞 للتواصل والدعم: [WhatsApp](https://wa.me/201062772291)
+
+---
+
+## 📄 الرخصة
+
+هذا المشروع محمي بحقوق الطبع والنشر © 2025 Essam Abo Elmgd
+
+---
+
+**آخر تحديث:** 2025-01-02  
+**إصدار:** 1.0.0
