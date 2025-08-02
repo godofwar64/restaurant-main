@@ -1,0 +1,8 @@
+services:
+  - type: static
+    name: vite-frontend
+    repo: <replace-with-your-github-repo>
+    buildCommand: npm install && npm run build
+    publishCommand: ""
+    publishDir: frontend/dist
+    root: frontend
