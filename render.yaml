@@ -1,7 +1,7 @@
 services:
   - type: static
     name: vite-frontend
-    repo: <replace-with-your-github-repo>
+    repo: https://github.com/godofwar64/restaurant-main.git
     buildCommand: npm install && npm run build
     publishCommand: ""
     publishDir: frontend/dist
